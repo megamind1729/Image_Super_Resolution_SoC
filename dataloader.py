@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 from torch.utils.data import IterableDataset, DataLoader
 
 
-# Ref.: https://github.com/yjn870/ESPCN-pytorch/blob/ab84ee1bccb2978f2f9b88f9e0315d9be12c099e/prepare.py#L16
 # Train Dataset Class
 class SRTrainDataset(IterableDataset):
     def __init__(self, dirpath_images, scaling_factor, patch_size, stride):
@@ -111,8 +110,6 @@ class SRValidDataset(IterableDataset):
     def __len__(self):
         return len(self.all_images)
 
-
-# Ref.: https://discuss.pytorch.org/t/how-to-shuffle-an-iterable-dataset/64130/6
 class ShuffleDataset(IterableDataset):
     def __init__(self, dataset, buffer_size):
         super().__init__()
