@@ -15,11 +15,11 @@ In our project, to recover $I^{SR}$, a $l$ = 3 layer convolutional network is us
 
 We set $(f1,n1) = (5, 64), (f2,n2) = (3, 32)$ and $(f3,n3) = (3,C*r^2)$ in our code, where $f_i$ is the kernel size, $n_i$ is the number of features in th $i$-th layer of the CNN, $C$ is the number of channels in the image and $r$ is the upscaling factor.  The activation function is the $tanh()$ function.
 
-In the training phase, $17r$ x $17r$ pixel sub-images are extracted from the training ground truth images $I^{HR}$ , where $r$ is the upscaling factor. To synthesize the low-resolution samples $I^{LR}$ , we blur $I^{HR}$ using a Gaussian filter and sub-sample it by the upscaling factor. The sub-images are extracted from original images with a stride of $(17- $&Sigma; $mod (f, 2))$ x $r$ from $I^{HR}$ and a stride of $17-$&Sigma; $mod (f, 2)$ from $I^{LR}$ . This ensures that all pixels in the original image appear once and only once as the ground truth of the training data.
+In the training phase, $17r$ x $17r$ pixel sub-images are extracted from the training ground truth images $I^{HR}$ , where $r$ is the upscaling factor. To synthesize the low-resolution samples $I^{LR}$, we blur $I^{HR}$ using a Gaussian filter and sub-sample it by the upscaling factor. The sub-images are extracted from original images with a stride of $(17- $&Sigma; $mod (f, 2))$ x $r$ from $I^{HR}$ and a stride of $17-$&Sigma; $mod (f, 2)$ from $I^{LR}$ . This ensures that all pixels in the original image appear once and only once as the ground truth of the training data.
 
 ## Setup
 
-Please setup your training environemnt by installing the requirements using:
+Please setup your training environment by installing the requirements using:
 ```
 $ pip install -r requirements.txt
 ```
